@@ -17,7 +17,16 @@ def main():
 
 	# Now to place a simlink in for pathogen
 	os.symlink("vim-pathogen/autoload", "autoload")
-	os.symlink("vim-hybrid/colors", "colorsautoload")
+	os.symlink("vim-hybrid/colors", "colors")
+	os.symlink('bundles/snipmate/snippets', 'snippets')
+
+	# Get home dir and make me some simlinks
+	home = bash('cd ~/ && pwd')
+	os.remove(home + '.vimrc')
+	bash('rm -rf ' + home + '.vim')
+	os.symlink('./', home + '.vim')
+	os.symlink('./vimrc', home + '.vimrc')
+
 	return 0
 
 if __name__ == '__main__':

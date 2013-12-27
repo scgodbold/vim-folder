@@ -19,3 +19,6 @@
 [submodule "vim-hybrid"]
 	path = vim-hybrid
 	url = https://github.com/w0ng/vim-hybrid.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
