@@ -1,8 +1,11 @@
+import os
 import subprocess
 
 def bash(command):
+	# allows for a bash command to be passed in as a string
+	# and its stdout is returned
 	output = subprocess.Popen([command], shell=True,
-		stdout=subprocess.PIPE).communicate()[0]
+	stdout=subprocess.PIPE).communicate()[0]
 	return output
 
 def main():
@@ -11,8 +14,11 @@ def main():
 	bash("git submodule update")
 	bash("git submodule foreach git submodule init")
 	bash("git submodule foreach git submodule update")
+
+	# Now to place a simlink in for pathogen
+	os.symlink("vim-pathogen/autoload", "autoload")
+	os.symlink("vim-hybrid/colors", "colorsautoload")
 	return 0
 
 if __name__ == '__main__':
 	main()
-
