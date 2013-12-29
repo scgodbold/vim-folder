@@ -1,6 +1,8 @@
 import os
 import subprocess
 
+"hello world"
+
 def bash(command):
 	# allows for a bash command to be passed in as a string
 	# and its stdout is returned
