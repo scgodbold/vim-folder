@@ -24,8 +24,6 @@ def main():
 
 	# Get home dir and make me some simlinks
 	home = bash('cd ~/ && pwd')
-	os.remove(home + '.vimrc')
-	bash('rm -rf ' + home + '.vim')
 	os.symlink('./', home + '.vim')
 	os.symlink('./vimrc', home + '.vimrc')
 
